@@ -32,6 +32,9 @@ go get -u github.com/heiwa4126/gozero/cmd/gozero
 go clean -i github.com/heiwa4126/gozero/cmd/gozero
 ```
 
+ただ、`$GOPATH/src`以下は消えないみたいなので
+それは手で消してください。
+
 
 # 開発
 
@@ -51,10 +54,24 @@ GOPATHの
 2番めはgoのパス(Ubuntuで`sudo snap install --classic go`したので)。
 3番め(`$MYGOPATH`)は自分の開発用パス。`gcd`エリアスで移動できる。
 
+
 あとは
 [ghq](https://github.com/motemen/ghq)をgo getして
 `git config --global ghq.root "$MYGOPATH"`
 しておく。
+
+
+この3つGOPATHを使う利点は
+
+- わけがわからなくなったら`rm -rf ~/.go`すれば人のコードはみんな消せる
+- 自分のコードと人のコードが混ざらない
+
+ですが
+
+- 自分のコードを`go get`して最初のパスに入れた場合、それを消さないと3番目のパスで開発できない
+
+という欠点があります。
+
 
 
 ## ソースの取得
@@ -78,6 +95,12 @@ ghq get github.com/heiwa4126/gozero
 
 
 ## ビルド
+
+*注意*:
+go getでgozeroを取得しているなら、
+↑を参照してアンインストールしておくこと。
+(もしくは3つもGOPATHを使うのを辞める)
+
 
 ``` bash
 cd $MYGOPATH/src/github.com/heiwa4126/gozero
