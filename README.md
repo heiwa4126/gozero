@@ -8,7 +8,7 @@ go 1.11以前の非モジュール系のプロジェクトの練習
 別に開発とかしたくない、`gozero`コマンドだけ使いたい、という場合。
 
 ``` bash
-go get github.com/heiwa4126/gozero/cmd/gozero
+go get -u github.com/heiwa4126/gozero/cmd/gozero
 ```
 
 # 開発
