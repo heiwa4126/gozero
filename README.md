@@ -11,11 +11,14 @@ version=1.0.0
 42
 ```
 のような文字列が出力される。
+要はhelloworldです。
 
 
 # インストール
 
-別に開発とかしたくない、`gozero`コマンドだけ使いたい、という場合。
+別に開発とかしたくない、
+`gozero`コマンドだけ使いたい、
+という最も普通のケース。
 
 ``` bash
 go get -u github.com/heiwa4126/gozero/cmd/gozero
@@ -24,6 +27,7 @@ go get -u github.com/heiwa4126/gozero/cmd/gozero
 レポジトリパスの後ろに`cmd/gozero`がついてるのがミソ
 
 アンインストールは
+
 ``` bash
 go clean -i github.com/heiwa4126/gozero/cmd/gozero
 ```
@@ -43,7 +47,7 @@ alias gcd='cd $MYGOPATH/src/github.com/heiwa4126'
 ```
 
 GOPATHの
-最初のは`go get`で入れるパス。
+最初のパスは`go get`で入れるパス。
 2番めはgoのパス(Ubuntuで`sudo snap install --classic go`したので)。
 3番め(`$MYGOPATH`)は自分の開発用パス。`gcd`エリアスで移動できる。
 
@@ -51,6 +55,7 @@ GOPATHの
 [ghq](https://github.com/motemen/ghq)をgo getして
 `git config --global ghq.root "$MYGOPATH"`
 しておく。
+
 
 ## ソースの取得
 
@@ -65,16 +70,11 @@ git clone https://github.com/heiwa4126/gozero
 ghq get github.com/heiwa4126/gozero
 ```
 
-もちろんあなたが開発者、または共同開発者なら
-```
-https://github.com/heiwa4126/gozero
-```
+もちろんあなたが開発者(または共同開発者)なら
+`https://github.com/heiwa4126/gozero`
 のかわりに
-```
-git@github.com:heiwa4126/gozero.git
-```
+`git@github.com:heiwa4126/gozero.git`
 を使うこと。
-
 
 
 ## ビルド
@@ -96,3 +96,8 @@ go install
 ```
 で、コマンドgozeroがこのGOPATHのbin(つまり`$MYGOPATH/bin`)に
 インストールされる。
+
+
+## TODO
+
+Relaseの練習をすること。
