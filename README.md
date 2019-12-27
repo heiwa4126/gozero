@@ -14,7 +14,7 @@ version=1.0.0
 要はhelloworldです。
 
 
-# インストール
+# デプロイ
 
 別に開発とかしたくない、
 `gozero`コマンドだけ使いたい、
@@ -40,6 +40,8 @@ bin/以下にgozeroがビルドされる。
 
 ``` bash
 go clean -i github.com/heiwa4126/gozero/cmd/gozero
+# or
+go clean -i github.com/heiwa4126/gozero/...
 ```
 
 ただ、`$GOPATH/src`以下は消えないみたいなので
