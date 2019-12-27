@@ -20,11 +20,21 @@ version=1.0.0
 `gozero`コマンドだけ使いたい、
 という最も普通のケース。
 
-``` bash
+``` sh
 go get -u github.com/heiwa4126/gozero/cmd/gozero
 ```
-
 レポジトリパスの後ろに`cmd/gozero`がついてるのがミソ
+
+または
+``` sh
+go get -u github.com/heiwa4126/gozero/...
+```
+でもOK
+
+これで`$GOPATH`の最初のパスの、
+src/github.com/heiwa4126/gozeroにソースがpullされて
+bin/以下にgozeroがビルドされる。
+
 
 アンインストールは
 
@@ -35,6 +45,8 @@ go clean -i github.com/heiwa4126/gozero/cmd/gozero
 ただ、`$GOPATH/src`以下は消えないみたいなので
 それは手で消してください。
 
+[clean - The Go Programming Language](https://golang.org/pkg/cmd/go/internal/clean/)
+見てもソース消すやつはないみたい。
 
 # 開発
 
@@ -50,9 +62,9 @@ alias gcd='cd $MYGOPATH/src/github.com/heiwa4126'
 ```
 
 GOPATHの
-最初のパスは`go get`で入れるパス。
-2番めはgoのパス(Ubuntuで`sudo snap install --classic go`したので)。
-3番め(`$MYGOPATH`)は自分の開発用パス。`gcd`エリアスで移動できる。
+- 最初のパスは`go get`で入れるパス。
+- 2番めはgoのパス(Ubuntuで`sudo snap install --classic go`したので)。
+- 3番め(`$MYGOPATH`)は自分の開発用パス。`gcd`エリアスで移動できる。
 
 
 あとは
@@ -123,4 +135,4 @@ go install
 
 ## TODO
 
-Relaseの練習をすること。
+Releaseの練習をすること。
