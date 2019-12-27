@@ -116,20 +116,30 @@ go getでgozeroを取得しているなら、
 (もしくは3つもGOPATHを使うのを辞める)
 
 
-``` bash
+```sh
 cd $MYGOPATH/src/github.com/heiwa4126/gozero
 ```
 して
 
-``` bash
+```sh
+go run ./cmd/gozero
+# or
+go build ./cmd/gozero ; ./gozero
+```
+でローカル実行、ローカルビルド
+
+
+```sh
 go install
 ```
 で、gozero.aがこのGOPATHのpkgにインストールされる。
 
 また、
-``` bash
+```sh
 cd cmd/gozero
 go install
+# or
+go install ./cmd/gozero
 ```
 で、コマンドgozeroがこのGOPATHのbin(つまり`$MYGOPATH/bin`)に
 インストールされる。
@@ -138,3 +148,12 @@ go install
 ## TODO
 
 Releaseの練習をすること。
+
+`cmd`は慣習。go本体にcmd/があるので、
+```
+go build cmd/gozero
+```
+(`./cmd/`ではなく)すると、結構たいへんなことになる。
+
+「ビルドされるバイナリ名がディレクトリと同じになる」のを利用するだけだったら
+`cmd/gozero/`ではなく`gozero/`にmainパッケージを置いたらいいのでは。
